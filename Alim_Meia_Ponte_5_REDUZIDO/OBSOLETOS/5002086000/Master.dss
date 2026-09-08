@@ -1,0 +1,21 @@
+Clear
+New Circuit.5002086
+
+
+Redirect Vsource.dss
+Redirect LineCode.dss
+Redirect LoadShape.dss
+Redirect GrowthShape.dss
+Redirect TCC_Curve.dss
+Redirect Spectrum.dss
+Redirect busa4-_2021126072_segmmt_53951427\Branches.dss
+Redirect Line.dss
+Redirect Load.dss
+Redirect Transformer.dss
+Redirect Reactor.dss
+Redirect Monitor.dss
+Redirect EnergyMeter.dss
+MakeBusList
+Redirect BusVoltageBases.dss  ! set voltage bases
+Buscoords BusCoords.dss
+GIScoords GISCoords.dss

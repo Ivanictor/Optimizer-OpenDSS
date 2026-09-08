@@ -1,0 +1,60 @@
+New Storage.Battery_1 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 kWrated=138.2866812896776 kWhrated=1106.2934503174208 dispmode=follow %stored=50
+
+New Storage.Battery_2 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 kWrated=138.2866812896776 kWhrated=1106.2934503174208 dispmode=follow %stored=50
+
+New Storage.Battery_3 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 kWrated=124.5100672949438 kWhrated=996.0805383595504 dispmode=follow %stored=50
+
+New Storage.Battery_4 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 kWrated=124.5100672949438 kWhrated=996.0805383595504 dispmode=follow %stored=50
+
+New Storage.Battery_5 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 kWrated=103.8865209814504 kWhrated=831.0921678516032 dispmode=follow %stored=50
+
+New Storage.Battery_6 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 kWrated=103.8865209814504 kWhrated=831.0921678516032 dispmode=follow %stored=50
+
+New Storage.Battery_7 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 kWrated=101.0150489111118 kWhrated=808.1203912888944 dispmode=follow %stored=50
+
+New Storage.Battery_8 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 kWrated=101.0150489111118 kWhrated=808.1203912888944 dispmode=follow %stored=50
+
+New Storage.Battery_9 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 kWrated=100.5848073101934 kWhrated=804.6784584815472 dispmode=follow %stored=50
+
+New Storage.Battery_10 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 kWrated=100.5848073101934 kWhrated=804.6784584815472 dispmode=follow %stored=50
+
+New Storage.Battery_11 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 kWrated=97.8704060516232 kWhrated=782.9632484129856 dispmode=follow %stored=50
+
+New Storage.Battery_12 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 kWrated=97.8704060516232 kWhrated=782.9632484129856 dispmode=follow %stored=50
+
+New Storage.Battery_13 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 kWrated=95.4287520399244 kWhrated=763.4300163193952 dispmode=follow %stored=50
+
+New Storage.Battery_14 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 kWrated=95.4287520399244 kWhrated=763.4300163193952 dispmode=follow %stored=50
+
+New Storage.Battery_15 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 kWrated=95.3506517776624 kWhrated=762.8052142212993 dispmode=follow %stored=50
+
+New Storage.Battery_16 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 kWrated=95.3506517776624 kWhrated=762.8052142212993 dispmode=follow %stored=50
+
+New Storage.Battery_17 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 kWrated=94.5349538013614 kWhrated=756.2796304108912 dispmode=follow %stored=50
+
+New Storage.Battery_18 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 kWrated=94.5349538013614 kWhrated=756.2796304108912 dispmode=follow %stored=50
+
+New Storage.Battery_19 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 kWrated=87.6456679304654 kWhrated=701.1653434437231 dispmode=follow %stored=50
+
+New Storage.Battery_20 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 kWrated=87.6456679304654 kWhrated=701.1653434437231 dispmode=follow %stored=50
+
+New Storage.Battery_21 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 kWrated=87.1271915513518 kWhrated=697.0175324108144 dispmode=follow %stored=50
+
+New Storage.Battery_22 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 kWrated=87.1271915513518 kWhrated=697.0175324108144 dispmode=follow %stored=50
+
+New Storage.Battery_23 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 kWrated=86.4078537783224 kWhrated=691.2628302265792 dispmode=follow %stored=50
+
+New Storage.Battery_24 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 kWrated=86.4078537783224 kWhrated=691.2628302265792 dispmode=follow %stored=50
+
+New Storage.Battery_25 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 kWrated=85.7075647475486 kWhrated=685.6605179803888 dispmode=follow %stored=50
+
+New Storage.Battery_26 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 kWrated=85.7075647475486 kWhrated=685.6605179803888 dispmode=follow %stored=50
+
+New Storage.Battery_27 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 kWrated=83.5797993977754 kWhrated=668.6383951822032 dispmode=follow %stored=50
+
+New Storage.Battery_28 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 kWrated=83.5797993977754 kWhrated=668.6383951822032 dispmode=follow %stored=50
+
+New Storage.Battery_29 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 kWrated=83.0921582813138 kWhrated=664.7372662505104 dispmode=follow %stored=50
+
+New Storage.Battery_30 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 kWrated=83.0921582813138 kWhrated=664.7372662505104 dispmode=follow %stored=50
+

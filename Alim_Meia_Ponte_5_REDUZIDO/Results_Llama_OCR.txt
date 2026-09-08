@@ -1,0 +1,14 @@
+ Validação por nomes: 
+
+Acertos:  29
+Total:  44
+Percentual de acertos:  65.91 %
+Média:  0.8025875860274393 
+
+Acertos nas horas de afastamento: 
+
+Acertos:  20
+Total:  44
+Percentual de acertos: 45.45 %
+Contagem de horas não identificadas:  16
+Tempo de execução: 502.56 segundos

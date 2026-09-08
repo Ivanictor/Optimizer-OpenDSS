@@ -1,0 +1,4 @@
+New "Line.smt_88888868971" phases=3 bus1=84808465002086.1.2.3 bus2=i888888340825002086.1.2.3 linecode=39-31m_3 Seasons=1 Ratings=[400,] normamps=125 emergamps=600 length=1E-006 units=km
+New "Line.smt_88888843883" phases=3 bus1=i888888340825002086.1.2.3 bus2=i888888340595002086.1.2.3 linecode=39-31m_3 Seasons=1 Ratings=[400,] normamps=125 emergamps=600 length=1E-006 units=km
+New "Line.smt_88888843882~smt_88888843875~smt_88888862056" phases=3 bus2=i888888467345002086.1.2.3 Seasons=1 Ratings=[400,] normamps=125 emergamps=600 bus1=i888888340825002086.1.2.3 r1=1.551 x1=0.47 r0=0.1784 x0=0.4047 C1=3.4 C0=1.6 length=3E-006 units=km
+New "Line.cmt_sa0002751" phases=3 bus1=i888888340825002086.1.2.3 bus2=i888888340825002086b.1.2.3 r1=1 r0=1 x1=1 x0=1 C1=1.1 C0=1 length=0.001 Switch=True

@@ -1,0 +1,55 @@
+! Criação da seção do arquivo master
+
+Clear
+
+
+Redirect 'ALIMENTADOR_2021126072_5002086.dss'
+Redirect 'CODIGO_CONDUTOR_2021126072_5002086.dss'
+Redirect 'LOADSHAPES_MT_2021126072_5002086.dss'
+Redirect 'LOADSHAPES_BT_2021126072_5002086.dss'
+Redirect 'CHAVES_MT_2021126072_5002086.dss'
+Redirect 'LINHAS_MT_2021126072_5002086.dss'
+Redirect 'TRANSFORMADORES_2021126072_5002086.dss'
+Redirect 'MEDIDORES_2021126072_5002086.dss'
+Redirect 'CARGAS_DU01_2021126072_5002086.dss'
+
+!Redirect 'PV_System_60_MeiaPonte.dss'
+!Redirect 'PV_System_120_MeiaPonte.dss'
+!Redirect 'BATERIAS_30.dss'
+!Redirect 'BATERIAS_60.dss'
+
+//Testes Empíricos
+!Redirect 'BATERIAS_60_1kw8kwh.dss'
+!Redirect 'BATERIAS_60_1kw_16kwh.dss'
+!Redirect 'BATERIAS_60_1_5kw_16kwh.dss'
+
+
+Redirect 'TENSOES_BASE_2021126072_5002086.dss'
+
+Redirect 'MONITORES_2021126072_5002086.dss'
+!Redirect 'MONITOR_TENSOES.dss'
+Redirect Monitor_Voltage_PyDSS.dss
+!Redirect 'Monitor_PV.dss'
+!Redirect 'Monitores_PV_120.dss'
+!Redirect 'Plot_PV.dss'
+
+!buscoords buscoords.csv
+
+!Set mode = daily
+!set stepsize=1h
+!set number=48
+
+Set tolerance = 0.0001
+Set maxcontroliter = 10
+!Set algorithm = newton
+!Solve mode = direct
+
+!Reduce
+!Solve
+
+!sample
+!Export Monitor all
+!show meters
+
+!Plot monitor object= trf_5286964a channels=(1 3 5 )
+!Plot monitor object= feeder channels=(1 3 5 )

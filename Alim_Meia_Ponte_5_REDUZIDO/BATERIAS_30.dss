@@ -1,0 +1,90 @@
+New LoadShape.StorageCurve_1 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.4, -0.68, -0.85, -0.93, -0.89, -0.73, -0.58, -0.35, -0.11, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_1 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 kWrated=138.2866812896776 kWhrated=1106.2934503174208 dispmode=follow daily=StorageCurve_1
+New LoadShape.StorageCurve_2 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.4, -0.68, -0.85, -0.93, -0.89, -0.73, -0.58, -0.35, -0.11, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_2 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 kWrated=138.2866812896776 kWhrated=1106.2934503174208 dispmode=follow daily=StorageCurve_2
+New LoadShape.StorageCurve_3 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.39, -0.67, -0.85, -0.92, -0.88, -0.72, -0.58, -0.35, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_3 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 kWrated=124.5100672949438 kWhrated=996.0805383595504 dispmode=follow daily=StorageCurve_3
+New LoadShape.StorageCurve_4 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.39, -0.67, -0.85, -0.92, -0.88, -0.72, -0.58, -0.35, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_4 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 kWrated=124.5100672949438 kWhrated=996.0805383595504 dispmode=follow daily=StorageCurve_4
+New LoadShape.StorageCurve_5 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.84, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_5 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 kWrated=103.8865209814504 kWhrated=831.0921678516032 dispmode=follow daily=StorageCurve_5
+New LoadShape.StorageCurve_6 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.84, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_6 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 kWrated=103.8865209814504 kWhrated=831.0921678516032 dispmode=follow daily=StorageCurve_6
+New LoadShape.StorageCurve_7 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_7 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 kWrated=101.0150489111118 kWhrated=808.1203912888944 dispmode=follow daily=StorageCurve_7
+New LoadShape.StorageCurve_8 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_8 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 kWrated=101.0150489111118 kWhrated=808.1203912888944 dispmode=follow daily=StorageCurve_8
+New LoadShape.StorageCurve_9 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_9 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 kWrated=100.5848073101934 kWhrated=804.6784584815472 dispmode=follow daily=StorageCurve_9
+New LoadShape.StorageCurve_10 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.67, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_10 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 kWrated=100.5848073101934 kWhrated=804.6784584815472 dispmode=follow daily=StorageCurve_10
+New LoadShape.StorageCurve_11 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_11 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 kWrated=97.8704060516232 kWhrated=782.9632484129856 dispmode=follow daily=StorageCurve_11
+New LoadShape.StorageCurve_12 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.34, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_12 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 kWrated=97.8704060516232 kWhrated=782.9632484129856 dispmode=follow daily=StorageCurve_12
+New LoadShape.StorageCurve_13 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_13 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 kWrated=95.4287520399244 kWhrated=763.4300163193952 dispmode=follow daily=StorageCurve_13
+New LoadShape.StorageCurve_14 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_14 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 kWrated=95.4287520399244 kWhrated=763.4300163193952 dispmode=follow daily=StorageCurve_14
+New LoadShape.StorageCurve_15 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_15 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 kWrated=95.3506517776624 kWhrated=762.8052142212993 dispmode=follow daily=StorageCurve_15
+New LoadShape.StorageCurve_16 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.87, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_16 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 kWrated=95.3506517776624 kWhrated=762.8052142212993 dispmode=follow daily=StorageCurve_16
+New LoadShape.StorageCurve_17 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.86, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_17 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 kWrated=94.5349538013614 kWhrated=756.2796304108912 dispmode=follow daily=StorageCurve_17
+New LoadShape.StorageCurve_18 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.91, -0.86, -0.71, -0.57, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_18 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 kWrated=94.5349538013614 kWhrated=756.2796304108912 dispmode=follow daily=StorageCurve_18
+New LoadShape.StorageCurve_19 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.71, -0.56, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_19 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 kWrated=87.6456679304654 kWhrated=701.1653434437231 dispmode=follow daily=StorageCurve_19
+New LoadShape.StorageCurve_20 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.71, -0.56, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_20 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 kWrated=87.6456679304654 kWhrated=701.1653434437231 dispmode=follow daily=StorageCurve_20
+New LoadShape.StorageCurve_21 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.71, -0.56, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_21 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 kWrated=87.1271915513518 kWhrated=697.0175324108144 dispmode=follow daily=StorageCurve_21
+New LoadShape.StorageCurve_22 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.71, -0.56, -0.33, -0.1, 0.21, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_22 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 kWrated=87.1271915513518 kWhrated=697.0175324108144 dispmode=follow daily=StorageCurve_22
+New LoadShape.StorageCurve_23 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.7, -0.56, -0.33, -0.1, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_23 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 kWrated=86.4078537783224 kWhrated=691.2628302265792 dispmode=follow daily=StorageCurve_23
+New LoadShape.StorageCurve_24 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.7, -0.56, -0.33, -0.1, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_24 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 kWrated=86.4078537783224 kWhrated=691.2628302265792 dispmode=follow daily=StorageCurve_24
+New LoadShape.StorageCurve_25 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.7, -0.56, -0.33, -0.1, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_25 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 kWrated=85.7075647475486 kWhrated=685.6605179803888 dispmode=follow daily=StorageCurve_25
+New LoadShape.StorageCurve_26 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.38, -0.66, -0.83, -0.9, -0.86, -0.7, -0.56, -0.33, -0.1, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_26 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 kWrated=85.7075647475486 kWhrated=685.6605179803888 dispmode=follow daily=StorageCurve_26
+New LoadShape.StorageCurve_27 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.37, -0.65, -0.82, -0.9, -0.86, -0.7, -0.56, -0.33, -0.09, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_27 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 kWrated=83.5797993977754 kWhrated=668.6383951822032 dispmode=follow daily=StorageCurve_27
+New LoadShape.StorageCurve_28 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.37, -0.65, -0.82, -0.9, -0.86, -0.7, -0.56, -0.33, -0.09, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_28 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 kWrated=83.5797993977754 kWhrated=668.6383951822032 dispmode=follow daily=StorageCurve_28
+New LoadShape.StorageCurve_29 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.37, -0.65, -0.82, -0.9, -0.86, -0.7, -0.56, -0.33, -0.09, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_29 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 kWrated=83.0921582813138 kWhrated=664.7372662505104 dispmode=follow daily=StorageCurve_29
+New LoadShape.StorageCurve_30 npts=24 interval=1
+~ mult=[0.32, 0.29, 0.27, 0.27, 0.26, 0.22, 0.01, -0.37, -0.65, -0.82, -0.9, -0.86, -0.7, -0.56, -0.33, -0.09, 0.22, 0.41, 0.49, 0.5, 0.49, 0.46, 0.41, 0.37]
+New Storage.Battery_30 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 kWrated=83.0921582813138 kWhrated=664.7372662505104 dispmode=follow daily=StorageCurve_30

@@ -1,0 +1,2 @@
+! Criação da seção de circuitos
+New "Circuit.5002086" basekv=13.8 pu=1 bus1="84808465002086" r1=0 x1=0.0001

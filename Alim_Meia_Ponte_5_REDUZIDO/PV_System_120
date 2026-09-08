@@ -1,0 +1,240 @@
+New PVSystem.PV_1 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 pmpp=288.8419043299156 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_2 phases=3 bus1=82036275286964.1.2.3.4 kv=0.38 pmpp=288.8419043299156 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_3 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 pmpp=260.06644031309196 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_4 phases=3 bus1=82026915286812.1.2.3.4 kv=0.38 pmpp=260.06644031309196 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_5 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 pmpp=216.98966433097652 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_6 phases=3 bus1=82032765552819.1.2.3.4 kv=0.38 pmpp=216.98966433097652 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_7 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 pmpp=210.99196843364442 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_8 phases=3 bus1=82025745286821.1.2.3.4 kv=0.38 pmpp=210.99196843364442 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_9 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 pmpp=210.09331498291257 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_10 phases=3 bus1=82049885286934.1.2.3.4 kv=0.38 pmpp=210.09331498291257 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_11 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 pmpp=204.42369574461028 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_12 phases=3 bus1=82023395286788.1.2.3.4 kv=0.38 pmpp=204.42369574461028 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_13 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 pmpp=199.3237686375556 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_14 phases=3 bus1=82049545286931.1.2.3.4 kv=0.38 pmpp=199.3237686375556 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_15 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 pmpp=199.1606392004324 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_16 phases=3 bus1=82028035286810.1.2.3.4 kv=0.38 pmpp=199.1606392004324 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_17 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 pmpp=197.456876013439 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_18 phases=3 bus1=82054305286917.1.2.3.4 kv=0.38 pmpp=197.456876013439 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_19 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 pmpp=183.0670994140976 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_20 phases=3 bus1=82020175286794.1.2.3.4 kv=0.38 pmpp=183.0670994140976 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_21 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 pmpp=181.98414837863567 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_22 phases=3 bus1=97400945286961.1.2.3.4 kv=0.38 pmpp=181.98414837863567 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_23 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 pmpp=180.48165449939495 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_24 phases=3 bus1=82037555286840.1.2.3.4 kv=0.38 pmpp=180.48165449939495 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_25 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 pmpp=179.01894807428133 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_26 phases=3 bus1=82027735286815.1.2.3.4 kv=0.38 pmpp=179.01894807428133 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_27 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 pmpp=174.57464591977168 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_28 phases=3 bus1=82027905286808.1.2.3.4 kv=0.38 pmpp=174.57464591977168 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_29 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 pmpp=173.55610105778828 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_30 phases=3 bus1=82031445286959.1.2.3.4 kv=0.38 pmpp=173.55610105778828 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_31 phases=3 bus1=90855665286807.1.2.3.4 kv=0.38 pmpp=172.6392220921182 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_32 phases=3 bus1=90855665286807.1.2.3.4 kv=0.38 pmpp=172.6392220921182 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_33 phases=3 bus1=82053975286918.1.2.3.4 kv=0.38 pmpp=168.9086286699002 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_34 phases=3 bus1=82053975286918.1.2.3.4 kv=0.38 pmpp=168.9086286699002 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_35 phases=3 bus1=82027135286819.1.2.3.4 kv=0.38 pmpp=157.5805863863623 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_36 phases=3 bus1=82027135286819.1.2.3.4 kv=0.38 pmpp=157.5805863863623 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_37 phases=3 bus1=82027655286814.1.2.3.4 kv=0.38 pmpp=157.32363516715057 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_38 phases=3 bus1=82027655286814.1.2.3.4 kv=0.38 pmpp=157.32363516715057 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_39 phases=3 bus1=82062475286857.1.2.3.4 kv=0.38 pmpp=155.71607639705107 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_40 phases=3 bus1=82062475286857.1.2.3.4 kv=0.38 pmpp=155.71607639705107 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_41 phases=3 bus1=82038095286834.1.2.3.4 kv=0.38 pmpp=155.5497447635974 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_42 phases=3 bus1=82038095286834.1.2.3.4 kv=0.38 pmpp=155.5497447635974 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_43 phases=3 bus1=82021995286799.1.2.3.4 kv=0.38 pmpp=154.84925714286177 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_44 phases=3 bus1=82021995286799.1.2.3.4 kv=0.38 pmpp=154.84925714286177 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_45 phases=3 bus1=82036745286803.1.2.3.4 kv=0.38 pmpp=154.25849849755795 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_46 phases=3 bus1=82036745286803.1.2.3.4 kv=0.38 pmpp=154.25849849755795 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_47 phases=3 bus1=82026685286811.1.2.3.4 kv=0.38 pmpp=150.38251132048174 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_48 phases=3 bus1=82026685286811.1.2.3.4 kv=0.38 pmpp=150.38251132048174 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_49 phases=3 bus1=82022605286791.1.2.3.4 kv=0.38 pmpp=149.50329275742524 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_50 phases=3 bus1=82022605286791.1.2.3.4 kv=0.38 pmpp=149.50329275742524 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_51 phases=3 bus1=82034555505307.1.2.3.4 kv=0.38 pmpp=147.22633001424876 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_52 phases=3 bus1=82034555505307.1.2.3.4 kv=0.38 pmpp=147.22633001424876 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_53 phases=3 bus1=82029355286816.1.2.3.4 kv=0.38 pmpp=146.71354474604416 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_54 phases=3 bus1=82029355286816.1.2.3.4 kv=0.38 pmpp=146.71354474604416 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_55 phases=3 bus1=82035485286965.1.2.3.4 kv=0.38 pmpp=145.74973323122583 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_56 phases=3 bus1=82035485286965.1.2.3.4 kv=0.38 pmpp=145.74973323122583 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_57 phases=3 bus1=82033055286804.1.2.3.4 kv=0.38 pmpp=141.9069131347847 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_58 phases=3 bus1=82033055286804.1.2.3.4 kv=0.38 pmpp=141.9069131347847 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_59 phases=3 bus1=82031405286958.1.2.3.4 kv=0.38 pmpp=138.640805019638 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_60 phases=3 bus1=82031405286958.1.2.3.4 kv=0.38 pmpp=138.640805019638 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_61 phases=3 bus1=81460505286830.1.2.3.4 kv=0.38 pmpp=137.32306915068233 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_62 phases=3 bus1=81460505286830.1.2.3.4 kv=0.38 pmpp=137.32306915068233 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_63 phases=3 bus1=82049805286933.1.2.3.4 kv=0.38 pmpp=134.2704338078267 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_64 phases=3 bus1=82049805286933.1.2.3.4 kv=0.38 pmpp=134.2704338078267 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_65 phases=3 bus1=82024325286800.1.2.3.4 kv=0.38 pmpp=132.89188783897987 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_66 phases=3 bus1=82024325286800.1.2.3.4 kv=0.38 pmpp=132.89188783897987 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_67 phases=3 bus1=82054235286916.1.2.3.4 kv=0.38 pmpp=132.72627640506522 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_68 phases=3 bus1=82054235286916.1.2.3.4 kv=0.38 pmpp=132.72627640506522 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_69 phases=3 bus1=82020405286795.1.2.3.4 kv=0.38 pmpp=131.15815708655313 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_70 phases=3 bus1=82020405286795.1.2.3.4 kv=0.38 pmpp=131.15815708655313 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_71 phases=3 bus1=82038115286835.1.2.3.4 kv=0.38 pmpp=129.97310188449933 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_72 phases=3 bus1=82038115286835.1.2.3.4 kv=0.38 pmpp=129.97310188449933 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_73 phases=3 bus1=82022455286790.1.2.3.4 kv=0.38 pmpp=129.39546514737222 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_74 phases=3 bus1=82022455286790.1.2.3.4 kv=0.38 pmpp=129.39546514737222 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_75 phases=3 bus1=82036045286966.1.2.3.4 kv=0.38 pmpp=129.19281331694285 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_76 phases=3 bus1=82036045286966.1.2.3.4 kv=0.38 pmpp=129.19281331694285 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_77 phases=3 bus1=82038825286839.1.2.3.4 kv=0.38 pmpp=126.6078606628031 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_78 phases=3 bus1=82038825286839.1.2.3.4 kv=0.38 pmpp=126.6078606628031 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_79 phases=3 bus1=82063385286866.1.2.3.4 kv=0.38 pmpp=125.71654822055113 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_80 phases=3 bus1=82063385286866.1.2.3.4 kv=0.38 pmpp=125.71654822055113 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_81 phases=3 bus1=82033945286960.1.2.3.4 kv=0.38 pmpp=124.89701878975396 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_82 phases=3 bus1=82033945286960.1.2.3.4 kv=0.38 pmpp=124.89701878975396 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_83 phases=3 bus1=82041995286833.1.2.3.4 kv=0.38 pmpp=124.8464868803517 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_84 phases=3 bus1=82041995286833.1.2.3.4 kv=0.38 pmpp=124.8464868803517 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_85 phases=3 bus1=82065285286862.1.2.3.4 kv=0.38 pmpp=124.8077647130839 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_86 phases=3 bus1=82065285286862.1.2.3.4 kv=0.38 pmpp=124.8077647130839 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_87 phases=3 bus1=82023305286787.1.2.3.4 kv=0.38 pmpp=124.14138547145147 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_88 phases=3 bus1=82023305286787.1.2.3.4 kv=0.38 pmpp=124.14138547145147 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_89 phases=3 bus1=82019965286792.1.2.3.4 kv=0.38 pmpp=123.60519186783698 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_90 phases=3 bus1=82019965286792.1.2.3.4 kv=0.38 pmpp=123.60519186783698 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_91 phases=3 bus1=82053635286914.1.2.3.4 kv=0.38 pmpp=123.25778949008512 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_92 phases=3 bus1=82053635286914.1.2.3.4 kv=0.38 pmpp=123.25778949008512 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_93 phases=3 bus1=82024965286806.1.2.3.4 kv=0.38 pmpp=122.84769256283292 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_94 phases=3 bus1=82024965286806.1.2.3.4 kv=0.38 pmpp=122.84769256283292 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_95 phases=3 bus1=82028045286809.1.2.3.4 kv=0.38 pmpp=121.9606539999099 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_96 phases=3 bus1=82028045286809.1.2.3.4 kv=0.38 pmpp=121.9606539999099 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_97 phases=3 bus1=82050465286938.1.2.3.4 kv=0.38 pmpp=121.93162033109849 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_98 phases=3 bus1=82050465286938.1.2.3.4 kv=0.38 pmpp=121.93162033109849 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_99 phases=3 bus1=82044385286867.1.2.3.4 kv=0.38 pmpp=118.53411120758585 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_100 phases=3 bus1=82044385286867.1.2.3.4 kv=0.38 pmpp=118.53411120758585 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_101 phases=3 bus1=82039695286842.1.2.3.4 kv=0.38 pmpp=117.24408784127017 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_102 phases=3 bus1=82039695286842.1.2.3.4 kv=0.38 pmpp=117.24408784127017 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_103 phases=3 bus1=82042655286828.1.2.3.4 kv=0.38 pmpp=114.64506510474662 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_104 phases=3 bus1=82042655286828.1.2.3.4 kv=0.38 pmpp=114.64506510474662 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_105 phases=3 bus1=82043025286831.1.2.3.4 kv=0.38 pmpp=114.0781895921301 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_106 phases=3 bus1=82043025286831.1.2.3.4 kv=0.38 pmpp=114.0781895921301 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_107 phases=3 bus1=82042275286845.1.2.3.4 kv=0.38 pmpp=113.64080862354623 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_108 phases=3 bus1=82042275286845.1.2.3.4 kv=0.38 pmpp=113.64080862354623 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_109 phases=3 bus1=82040415286945.1.2.3.4 kv=0.38 pmpp=112.75915568281361 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_110 phases=3 bus1=82040415286945.1.2.3.4 kv=0.38 pmpp=112.75915568281361 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_111 phases=3 bus1=82044325557353.1.2.3.4 kv=0.38 pmpp=112.25863842705208 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_112 phases=3 bus1=82044325557353.1.2.3.4 kv=0.38 pmpp=112.25863842705208 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_113 phases=3 bus1=82056915286890.1.2.3.4 kv=0.38 pmpp=111.37552782044202 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_114 phases=3 bus1=82056915286890.1.2.3.4 kv=0.38 pmpp=111.37552782044202 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_115 phases=3 bus1=82056385286891.1.2.3.4 kv=0.38 pmpp=110.6261517236048 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_116 phases=3 bus1=82056385286891.1.2.3.4 kv=0.38 pmpp=110.6261517236048 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_117 phases=3 bus1=82064145286858.1.2.3.4 kv=0.38 pmpp=110.23358246904446 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_118 phases=3 bus1=82064145286858.1.2.3.4 kv=0.38 pmpp=110.23358246904446 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_119 phases=3 bus1=82040015286941.1.2.3.4 kv=0.38 pmpp=110.2079462865912 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+New PVSystem.PV_120 phases=3 bus1=82040015286941.1.2.3.4 kv=0.38 pmpp=110.2079462865912 temperature=25 pf=1 
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature

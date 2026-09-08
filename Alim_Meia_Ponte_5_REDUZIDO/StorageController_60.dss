@@ -1,0 +1,90 @@
+New StorageController.SC_1 element=Transformer.trf_5286794a terminal=1 modedis=peakShave elementList=[battery_19, battery_20]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_2 element=Transformer.trf_5286799a terminal=1 modedis=peakShave elementList=[battery_43, battery_44]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_3 element=Transformer.trf_5286791a terminal=1 modedis=peakShave elementList=[battery_49, battery_50]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_4 element=Transformer.trf_5286788a terminal=1 modedis=peakShave elementList=[battery_11, battery_12]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_5 element=Transformer.trf_5286821a terminal=1 modedis=peakShave elementList=[battery_7, battery_8]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_6 element=Transformer.trf_5286811a terminal=1 modedis=peakShave elementList=[battery_47, battery_48]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_7 element=Transformer.trf_5286812a terminal=1 modedis=peakShave elementList=[battery_3, battery_4]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_8 element=Transformer.trf_5286819a terminal=1 modedis=peakShave elementList=[battery_35, battery_36]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_9 element=Transformer.trf_5286814a terminal=1 modedis=peakShave elementList=[battery_37, battery_38]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_10 element=Transformer.trf_5286815a terminal=1 modedis=peakShave elementList=[battery_25, battery_26]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_11 element=Transformer.trf_5286808a terminal=1 modedis=peakShave elementList=[battery_27, battery_28]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_12 element=Transformer.trf_5286810a terminal=1 modedis=peakShave elementList=[battery_15, battery_16]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_13 element=Transformer.trf_5286816a terminal=1 modedis=peakShave elementList=[battery_53, battery_54]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_14 element=Transformer.trf_5286958a terminal=1 modedis=peakShave elementList=[battery_59, battery_60]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_15 element=Transformer.trf_5286959a terminal=1 modedis=peakShave elementList=[battery_29, battery_30]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_16 element=Transformer.trf_5552819a terminal=1 modedis=peakShave elementList=[battery_5, battery_6]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_17 element=Transformer.trf_5286804a terminal=1 modedis=peakShave elementList=[battery_57, battery_58]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_18 element=Transformer.trf_5505307a terminal=1 modedis=peakShave elementList=[battery_51, battery_52]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_19 element=Transformer.trf_5286965a terminal=1 modedis=peakShave elementList=[battery_55, battery_56]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_20 element=Transformer.trf_5286964a terminal=1 modedis=peakShave elementList=[battery_1, battery_2]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_21 element=Transformer.trf_5286803a terminal=1 modedis=peakShave elementList=[battery_45, battery_46]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_22 element=Transformer.trf_5286840a terminal=1 modedis=peakShave elementList=[battery_23, battery_24]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_23 element=Transformer.trf_5286834a terminal=1 modedis=peakShave elementList=[battery_41, battery_42]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_24 element=Transformer.trf_5286931a terminal=1 modedis=peakShave elementList=[battery_13, battery_14]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_25 element=Transformer.trf_5286934a terminal=1 modedis=peakShave elementList=[battery_9, battery_10]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_26 element=Transformer.trf_5286918a terminal=1 modedis=peakShave elementList=[battery_33, battery_34]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_27 element=Transformer.trf_5286917a terminal=1 modedis=peakShave elementList=[battery_17, battery_18]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_28 element=Transformer.trf_5286857a terminal=1 modedis=peakShave elementList=[battery_39, battery_40]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_29 element=Transformer.trf_5286807a terminal=1 modedis=peakShave elementList=[battery_31, battery_32]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+
+New StorageController.SC_30 element=Transformer.trf_5286961a terminal=1 modedis=peakShave elementList=[battery_21, battery_22]
+~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0
+

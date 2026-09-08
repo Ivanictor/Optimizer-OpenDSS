@@ -1,0 +1,15 @@
+! Criação da seção de cargas MT Não Técnicas
+New "Load.MT_10009727955_NT_M1" bus1="88185385002086.1.2.3" phases=3 conn=Delta model=2 kv=13.8 kw=2.704901 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+New "Load.MT_10009727955_NT_M2" bus1="88185385002086.1.2.3" phases=3 conn=Delta model=3 kv=13.8 kw=2.704901 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+
+New "Load.MT_10014416466_NT_M1" bus1="89458365002086.1.2.3" phases=3 conn=Delta model=2 kv=13.8 kw=1.3109325 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+New "Load.MT_10014416466_NT_M2" bus1="89458365002086.1.2.3" phases=3 conn=Delta model=3 kv=13.8 kw=1.3109325 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+
+New "Load.MT_10015559007_NT_M1" bus1="89813615002086.1.2.3" phases=3 conn=Delta model=2 kv=13.8 kw=1.1475245 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+New "Load.MT_10015559007_NT_M2" bus1="89813615002086.1.2.3" phases=3 conn=Delta model=3 kv=13.8 kw=1.1475245 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+
+New "Load.MT_10020770241_NT_M1" bus1="9096432	.1.2.3" phases=3 conn=Delta model=2 kv=13.8 kw=0.486847 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+New "Load.MT_10020770241_NT_M2" bus1="90964325002086.1.2.3" phases=3 conn=Delta model=3 kv=13.8 kw=0.486847 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+
+New "Load.MT_10022767280_NT_M1" bus1="89813615002086.1.2.3" phases=3 conn=Delta model=2 kv=13.8 kw=0.502059 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
+New "Load.MT_10022767280_NT_M2" bus1="89813615002086.1.2.3" phases=3 conn=Delta model=3 kv=13.8 kw=0.502059 pf=0.92 daily="CURVA" status=variable vmaxpu=1.5 vminpu=0.93
