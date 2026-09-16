@@ -3,6 +3,7 @@ from py_dss_toolkit import dss_tools
 import pandas as pd
 
 def initialize_opendss():
+    """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
     dss = py_dss_interface.DSS()
 
@@ -20,13 +21,28 @@ def initialize_opendss():
 
     trafo_df = dss_tools.model.transformers_df
     loads_df = dss_tools.model.loads_df
+    buses_df = dss_tools.model.buses_df
+    lines_df = dss_tools.model.lines_df
 
     loads_df["kw"] = pd.to_numeric(loads_df["kw"], errors="coerce")
     loads_df = loads_df.sort_values(by='kw', ascending=False)
 
-    return dss, dss_tools, trafo_df, loads_df
+    trafo_df["bus_name"] = trafo_df["bus"].str.split(".").str[0]
+    lines_df["bus_name"] = lines_df["bus1"].str.split(".").str[0]
 
-def solve_circuit(dss: py_dss_interface.DSS, buses: list, trafo_df: pd.DataFrame):
+    buses_df = buses_df[["name", "distance", "all_pce_active_bus", "all_pde_active_bus"]]
+
+    loads_df = loads_df[["name", "bus1"]]
+
+    return dss, dss_tools, trafo_df, loads_df, buses_df, lines_df
+
+def solve_circuit(
+        dss: py_dss_interface.DSS, 
+        buses: list, 
+        trafo_df: pd.DataFrame, 
+        buses_df: pd.DataFrame, 
+        lines_df: pd.DataFrame
+        ):
 
     dss_file = r"C:\Dados_teste\OpenDSS\GWO\Alim_Meia_Ponte_5_REDUZIDO\Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
@@ -36,12 +52,13 @@ def solve_circuit(dss: py_dss_interface.DSS, buses: list, trafo_df: pd.DataFrame
     dss.text("set mode=daily")
     dss.text("set stepsize=1h")
     dss.text("set number=24")
+
     for i, bus in enumerate(buses):
         dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv=0.38 kWrated=100 kWhrated=800 dispmode=follow %stored=50")
 
-        trafo_name = trafo_df.query(f"bus == '{bus}'")["name"].iloc[0]
+        element_type, element_name = decide_element(bus, buses_df, trafo_df, lines_df)
 
-        dss.text(f"New StorageController.SC_{i} element=Transformer.{trafo_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
+        dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
     
     dss.solution.solve()
@@ -56,9 +73,35 @@ def solve_circuit(dss: py_dss_interface.DSS, buses: list, trafo_df: pd.DataFrame
 
         soma += sum(x for x in monitor if x < 0)
 
+    print(f"\nFluxo reverso dessa solução: {soma}")
+
     return soma
 
+def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame):
+    bus = bus.split(".")[0]
+    elements_query = buses_df.query(f"name == '{bus}'")["all_pde_active_bus"].iloc[0]
 
+    distance = 1e6
+    for element in elements_query:
+        element_type, element_name = element.split(".")
+
+        if element_type == "Line":
+            element_bus = lines_df.query(f"name == '{element_name}'")["bus_name"].iloc[0]
+            distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+
+        elif element_type == "Transformer":
+            element_bus = trafo_df.query(f"name == '{element_name}'")["bus_name"].iloc[0]
+            distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+
+        else:
+            continue
+
+        if distance_bus < distance:
+            distance = distance_bus
+            selected_element = element_name
+            selected_element_type = element_type
+
+    return selected_element_type, selected_element
 
 
 

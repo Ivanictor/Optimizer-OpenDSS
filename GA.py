@@ -8,7 +8,7 @@ from pymoo.operators.crossover.hux import HUX
 from pymoo.operators.mutation.bitflip import BitflipMutation
 from opendss_solver import initialize_opendss, solve_circuit
 
-dss, dss_tools, trafo_df, loads_df = initialize_opendss()
+dss, dss_tools, trafo_df, loads_df, buses_df, lines_df = initialize_opendss()
 
 buses = loads_df["bus1"].unique().tolist()
 
@@ -35,9 +35,9 @@ class MyBinaryProblem(Problem):
 
             selected_buses = [buses[i] for i in indices]
 
-            resultado = solve_circuit(dss, selected_buses, trafo_df)
+            resultado = solve_circuit(dss, selected_buses, trafo_df, buses_df, lines_df)
 
-            fitness.append(resultado)
+            fitness.append(abs(resultado))
 
         out["F"] = np.array(fitness)
         out["G"] = np.array(constraints).reshape(-1, 1)
