@@ -46,6 +46,7 @@ def solve_circuit(
 
     dss_file = r"C:\Dados_teste\OpenDSS\GWO\Alim_Meia_Ponte_5_REDUZIDO\Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
+    dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
     
     dss.text(f"buscoords BusCoords.csv")
 
@@ -54,9 +55,10 @@ def solve_circuit(
     dss.text("set number=24")
 
     for i, bus in enumerate(buses):
-        dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv=0.38 kWrated=100 kWhrated=800 dispmode=follow %stored=50")
+        
+        element_type, element_name, kv = decide_element(bus, buses_df, trafo_df, lines_df)
 
-        element_type, element_name = decide_element(bus, buses_df, trafo_df, lines_df)
+        dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv={kv} kWrated=100 kWhrated=800 dispmode=follow %stored=50")
 
         dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
@@ -74,6 +76,7 @@ def solve_circuit(
         soma += sum(x for x in monitor if x < 0)
 
     print(f"\nFluxo reverso dessa solução: {soma}")
+    print(f"Barras da solução: {buses}")
 
     return soma
 
@@ -86,12 +89,24 @@ def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lin
         element_type, element_name = element.split(".")
 
         if element_type == "Line":
-            element_bus = lines_df.query(f"name == '{element_name}'")["bus_name"].iloc[0]
+            segment_df = lines_df.query(f"name == '{element_name}'")
+
+            element_bus = segment_df["bus_name"].iloc[0]
             distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+
+            if "mt" in element_name:
+                kv = 13.8
+
+            elif "bt" in element_name:
+                kv = 0.38
+
+            else:
+                continue
 
         elif element_type == "Transformer":
             element_bus = trafo_df.query(f"name == '{element_name}'")["bus_name"].iloc[0]
             distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+            kv = trafo_df.query(f"name == '{element_name}'")["kv"].iloc[0]
 
         else:
             continue
@@ -100,8 +115,9 @@ def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lin
             distance = distance_bus
             selected_element = element_name
             selected_element_type = element_type
+            selected_kv = kv
 
-    return selected_element_type, selected_element
+    return selected_element_type, selected_element, selected_kv
 
 
 
