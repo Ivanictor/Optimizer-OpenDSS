@@ -1,13 +1,16 @@
 import py_dss_interface
 from py_dss_toolkit import dss_tools
 import pandas as pd
+from pathlib import Path
 
 def initialize_opendss():
     """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
     dss = py_dss_interface.DSS()
 
-    dss_file = r"C:\Dados_teste\OpenDSS\GWO\Alim_Meia_Ponte_5_REDUZIDO\Master_PyDSS_Interface.dss"
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    
+    dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
 
     dss_tools.update_dss(dss)
 
@@ -42,9 +45,11 @@ def solve_circuit(
         trafo_df: pd.DataFrame, 
         buses_df: pd.DataFrame, 
         lines_df: pd.DataFrame
-        ):
+        ) -> float:
 
-    dss_file = r"C:\Dados_teste\OpenDSS\GWO\Alim_Meia_Ponte_5_REDUZIDO\Master_PyDSS_Interface.dss"
+    BASE_DIR = Path(__file__).resolve().parent.parent
+        
+    dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
     dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
     
@@ -53,12 +58,14 @@ def solve_circuit(
     dss.text("set mode=daily")
     dss.text("set stepsize=1h")
     dss.text("set number=24")
+    dss.text("set maxcontroliter=100")
 
     for i, bus in enumerate(buses):
         
         element_type, element_name, kv = decide_element(bus, buses_df, trafo_df, lines_df)
+        pot = 280
 
-        dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv={kv} kWrated=100 kWhrated=800 dispmode=follow %stored=50")
+        dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv={kv} kWrated={pot} kWhrated={pot*8} dispmode=follow %stored=50")
 
         dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
@@ -80,7 +87,7 @@ def solve_circuit(
 
     return soma
 
-def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame):
+def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame) -> tuple:
     bus = bus.split(".")[0]
     elements_query = buses_df.query(f"name == '{bus}'")["all_pde_active_bus"].iloc[0]
 

@@ -13,7 +13,7 @@ dss, dss_tools, trafo_df, loads_df, buses_df, lines_df = initialize_opendss()
 buses = loads_df["bus1"].unique().tolist()
 
 class MyBinaryProblem(Problem):
-    def __init__(self, buses, n_constr_max=3):
+    def __init__(self, buses, n_constr_max=5):
         self.buses = buses
         self.max_units = n_constr_max
         super().__init__(n_var=len(buses), n_obj=1, n_constr=1, xl=0, xu=1, vtype=bool)
@@ -26,7 +26,7 @@ class MyBinaryProblem(Problem):
             indices = np.where(individual == 1)[0]
             n_selected = np.sum(individual)
 
-            g = n_selected - 3
+            g = n_selected - 5
             constraints.append(g)
 
             if g > 0:
