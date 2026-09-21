@@ -28,6 +28,9 @@ class MyIntegerProblem(Problem):
 
             resultado = solve_circuit(dss, selected_buses, trafo_df, buses_df, lines_df)
 
+            if resultado == 0 or np.isnan(resultado) or np.isin(resultado):
+                fitness.append(1e6)
+
             fitness.append(abs(resultado))
 
         out["F"] = np.array(fitness)
