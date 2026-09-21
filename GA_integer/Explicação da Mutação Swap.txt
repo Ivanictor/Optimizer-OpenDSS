@@ -1,0 +1,19 @@
+Explicação da Mutação Swap
+
+#Seleciona um gene e substitui o seu valor por outro não presente no indivíduo na mutação
+class UniqueSwapMutation(Mutation):
+    def __init__(self, prob=0.3):
+        super().__init__()
+        self.prob = prob       #Define a probabilidade de mutação
+
+    def _do(self, problem, X, **kwargs):
+        n_total = problem.xu[0] + 1        #Inteiros de 0 a xu, logo n_total é xu + 1
+        for individual in X:
+            if np.random.random() < self.prob:                  #Cria um float aleatório de 0 a 1, se for menor que prob, ele executa a mutação
+                pos = np.random.randint(len(individual))        #Cria um inteiro de 0 até len(individual), que é o tamanho do indivíduo, para ser o índice
+                current = set(individual)                       #Cria um set para o indivíduo atual
+                available = list(set(range(n_total)) - current)   #Cria uma lista com todos os valores inteiros possíveis de 0 a n_total, tirando os do indivíduo atual
+                if available:
+                    individual[pos] = np.random.choice(available)   #Se houver números disponíveis, ele seleciona um aleatoriamente e atribui ao índice pos
+        return X
+

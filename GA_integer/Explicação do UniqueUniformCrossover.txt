@@ -1,0 +1,39 @@
+Explicação do UniqueUniformCrossover
+
+class UniqueUniformCrossover(Crossover):
+    def __init__(self):
+        super().__init__(2, 2)  # 2 pais -> 2 filhos
+
+    #Crossover uniforme
+    def _do(self, problem, X, **kwargs):
+        _, n_matings, n_var = X.shape    #X tem forma (n_parents, n_matings, n_var) -> número de pais, número de cruzamentos, número de genes
+        Y = np.empty_like(X)             #Cria uma variável vazia como Y
+        n_total = problem.xu[0] + 1      #X vai de XL (mínimo) a Xu (máximo), logo de 0 a xu indica xu + 1 números possíveis
+
+        for k in range(n_matings):
+            p1, p2 = X[0, k], X[1, k]        #cruzamento entre pai 1 e pai 0 do cruzamento k
+            mask = np.random.random(n_var) < 0.5      #Máscara de booleans
+							#np.random.random gera floats aleatórios de 0 a 1, se maior que 0,5 é True, senão é False           
+
+            for child_idx, (a, b) in enumerate([(p1, p2), (p2, p1)]):
+                child = np.where(mask, a, b).astype(int) 	#np.where atende a uma condição. Onde há true em mask, ele atribui "a", onde há false, 
+								#ele atribui "b"
+                self._repair(child, n_total)
+                Y[child_idx, k] = child
+
+        return Y
+
+    #Filtra e substitui valores duplicados
+    def _repair(self, child, n_total):
+        seen = set()                        
+        duplicated_pos = []
+        for i, gene in enumerate(child):
+            if gene in seen:
+                duplicated_pos.append(i)            #Adiciona os genes duplicados à lista. Exemplo: [2, 5, 5], entra "2", índice do segundo 5
+            else:
+                seen.add(gene)                       #Adiciona o gene ao set se não estiver duplicado (para verificar os demais)
+        available = list(set(range(n_total)) - seen)         #Criou um set com todos os valores inteiros de 0 a n_total, removeu os que estão em seen
+                                                             #Com isso, criou uma nova lista sem os inteiros repetidos nos genes do indivíduo analisado
+        np.random.shuffle(available)                            #Embaralha os valores de available
+        for pos, val in zip(duplicated_pos, available):       #Junta o primeiro valor de duplicated_pos (índice) com o primeiro valor de available
+            child[pos] = val                                  #Atribui o valor disponível à posição onde havia um gene repetido
