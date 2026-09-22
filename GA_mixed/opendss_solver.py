@@ -3,13 +3,15 @@ from py_dss_toolkit import dss_tools
 import pandas as pd
 from pathlib import Path
 
+solution_counter = 0
+
 def initialize_opendss():
     """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
     dss = py_dss_interface.DSS()
 
     BASE_DIR = Path(__file__).resolve().parent.parent
-
+    
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
 
     dss_tools.update_dss(dss)
@@ -41,14 +43,18 @@ def initialize_opendss():
 
 def solve_circuit(
         dss: py_dss_interface.DSS, 
-        buses: list, 
+        buses: list,
+        powers: list, 
         trafo_df: pd.DataFrame, 
         buses_df: pd.DataFrame, 
         lines_df: pd.DataFrame
         ) -> float:
 
+    global solution_counter
+    solution_counter += 1
+
     BASE_DIR = Path(__file__).resolve().parent.parent
-    
+        
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
     dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
@@ -58,12 +64,12 @@ def solve_circuit(
     dss.text("set mode=daily")
     dss.text("set stepsize=1h")
     dss.text("set number=24")
-    dss.text("set maxcontroliter=200")
+    dss.text("set maxcontroliter=300")
 
     for i, bus in enumerate(buses):
         
         element_type, element_name, kv = decide_element(bus, buses_df, trafo_df, lines_df)
-        pot = 280
+        pot = powers[i]
 
         dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv={kv} kWrated={pot} kWhrated={pot*8} dispmode=follow %stored=50")
 
@@ -71,6 +77,8 @@ def solve_circuit(
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
     
     dss.solution.solve()
+    event_log = dss.text("export eventlog")
+    print(f"Caminho do eventlog: {event_log}")
 
     soma = 0
     for name in dss.monitors.names:
@@ -82,7 +90,7 @@ def solve_circuit(
 
         soma += sum(x for x in monitor if x < 0)
 
-    print(f"\nFluxo reverso dessa solução: {soma}")
+    print(f"\n[Solução #{solution_counter}] Fluxo reverso: {soma}")
     print(f"Barras da solução: {buses}")
 
     return soma
