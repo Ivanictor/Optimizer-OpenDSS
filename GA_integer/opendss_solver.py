@@ -3,6 +3,8 @@ from py_dss_toolkit import dss_tools
 import pandas as pd
 from pathlib import Path
 
+counter = 0
+
 def initialize_opendss():
     """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
@@ -46,6 +48,9 @@ def solve_circuit(
         buses_df: pd.DataFrame, 
         lines_df: pd.DataFrame
         ) -> float:
+    
+    global counter
+    counter += 1
 
     BASE_DIR = Path(__file__).resolve().parent.parent
     
@@ -82,7 +87,7 @@ def solve_circuit(
 
         soma += sum(x for x in monitor if x < 0)
 
-    print(f"\nFluxo reverso dessa solução: {soma}")
+    print(f"\nFluxo reverso da solução #{counter}: {soma}")
     print(f"Barras da solução: {buses}")
 
     return soma
