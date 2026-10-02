@@ -10,8 +10,8 @@ from opendss_solver import initialize_opendss, solve_circuit
 
 dss, dss_tools, trafo_df, loads_df, buses_df, lines_df = initialize_opendss()
 
-buses = loads_df["bus1"].unique().tolist()  # buses_df para todos os barramentos, loads_df para as cargas
-
+#buses = loads_df["bus1"].unique().tolist()  # buses_df para todos os barramentos, loads_df para as cargas
+buses = buses_df["name"].unique().tolist()
 
 class MyIntegerProblem(Problem):
     def __init__(self, buses, k=5):
