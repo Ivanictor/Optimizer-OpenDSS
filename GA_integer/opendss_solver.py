@@ -5,7 +5,7 @@ from pathlib import Path
 
 counter = 0
 
-def initialize_opendss():
+def initialize_opendss() -> tuple:
     """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
     dss = py_dss_interface.DSS()
