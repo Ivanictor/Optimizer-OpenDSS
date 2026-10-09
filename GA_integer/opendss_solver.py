@@ -17,6 +17,7 @@ def initialize_opendss() -> tuple:
     dss_tools.update_dss(dss)
 
     dss.text(f"compile [{dss_file}]")
+    dss.text("Redirect 'PVSystem_120_Irrad.dss")
 
     dss.text(f"buscoords BusCoords.csv")
 
@@ -56,7 +57,8 @@ def solve_circuit(
     
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
-    dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
+    #dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
+    dss.text("Redirect 'PVSystem_120_Irrad.dss")
     
     dss.text(f"buscoords BusCoords.csv")
 
@@ -93,6 +95,8 @@ def solve_circuit(
     return soma
 
 def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame) -> tuple:
+    """Decide o elemento a ser monitorado pelo storage controller calculando a distância das barras dos elementos PDE à subestação e escolhendo o elemento com menor distância"""
+
     bus = bus.split(".")[0]
     elements_query = buses_df.query(f"name == '{bus}'")["all_pde_active_bus"].iloc[0]
 
@@ -130,6 +134,5 @@ def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lin
             selected_kv = kv
 
     return selected_element_type, selected_element, selected_kv
-
 
 

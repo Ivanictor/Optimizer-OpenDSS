@@ -56,6 +56,7 @@ def solve_circuit(
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
     dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
+    #dss.text("Redirect 'PVSystem_120_Irrad.dss")
     
     dss.text(f"buscoords BusCoords.csv")
 
