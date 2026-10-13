@@ -66,6 +66,7 @@ def solve_circuit(
     dss.text("set stepsize=1h")
     dss.text("set number=24")
     dss.text("set maxcontroliter=200")
+    dss.text("set AllowForms=no")
 
     for i, bus in enumerate(buses):
         
