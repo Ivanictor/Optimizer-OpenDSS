@@ -31,6 +31,9 @@ class MyIntegerProblem(Problem):
             if resultado == 0 or np.isnan(resultado) or np.isinf(resultado):
                 fitness.append(1e6)
 
+            elif resultado > -1000:
+                fitness.append(1e6)
+
             else:
                 fitness.append(abs(resultado))
 

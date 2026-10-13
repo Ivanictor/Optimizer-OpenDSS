@@ -80,6 +80,10 @@ def solve_circuit(
     
     dss.solution.solve()
 
+    meter_values = dss.meters.register_values
+
+    converged = dss.solution.converged
+
     soma = 0
     for name in dss.monitors.names:
         if "voltage" in name:
@@ -91,6 +95,8 @@ def solve_circuit(
         soma += sum(x for x in monitor if x < 0)
 
     print(f"\nFluxo reverso da solução #{counter}: {soma}")
+    print(f"Energia total do alimentador: {meter_values[0]}")
+    print("Convergiu" if converged == 1 else "Não convergiu")
     print(f"Barras da solução: {buses}")
 
     return soma
