@@ -41,6 +41,30 @@ def initialize_opendss():
 
     return dss, dss_tools, trafo_df, loads_df, buses_df, lines_df
 
+def calc_separated_rpf(dss: py_dss_interface.DSS, w1: int = 2, w2: int = 1) -> tuple[float]:
+    soma_trafos = 0
+    soma_feeder = 0
+    for name in dss.monitors.names:
+        if "voltage" in name:
+            continue
+
+        if "battery" in name:
+            continue
+
+        dss.monitors.name = name
+        monitor = dss.monitors.channel(1)
+
+        if "feeder" in name:  
+            soma_feeder += sum(x for x in monitor if x < 0)
+            continue
+
+        soma_trafos += sum(x for x in monitor if x < 0)
+
+    rpf = w1*soma_trafos + w2*soma_feeder
+    total = soma_trafos + soma_feeder
+
+    return rpf, total
+
 def solve_circuit(
         dss: py_dss_interface.DSS, 
         buses: list,
@@ -52,6 +76,8 @@ def solve_circuit(
 
     global solution_counter
     solution_counter += 1
+
+    status_convergence = True
 
     BASE_DIR = Path(__file__).resolve().parent.parent
         
@@ -65,7 +91,8 @@ def solve_circuit(
     dss.text("set mode=daily")
     dss.text("set stepsize=1h")
     dss.text("set number=24")
-    dss.text("set maxcontroliter=300")
+    dss.text("set maxcontroliter=200")
+    dss.text("set AllowForms=no")
 
     for i, bus in enumerate(buses):
         
@@ -78,23 +105,21 @@ def solve_circuit(
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
     
     dss.solution.solve()
-    event_log = dss.text("export eventlog")
-    print(f"Caminho do eventlog: {event_log}")
 
-    soma = 0
-    for name in dss.monitors.names:
-        if "voltage" in name:
-            continue
+    if dss.solution.converged == 0:
+        status_convergence = False
 
-        dss.monitors.name = name
-        monitor = dss.monitors.channel(1)
+    if dss.solution.control_actions_done == 0:
+        status_convergence = False
 
-        soma += sum(x for x in monitor if x < 0)
+    rpf, total = calc_separated_rpf(dss)
 
-    print(f"\n[Solução #{solution_counter}] Fluxo reverso: {soma}")
+    print(f"\n[Solução #{solution_counter}] Fluxo reverso total: {total:.2f}, Fitness: {rpf:.2f}")
     print(f"Barras da solução: {buses}")
+    print(f"Potências da solução: {[round(float(p), 2) for p in powers]}")
+    print(f"Convergiu: {"Sim" if status_convergence else "Não"}")
 
-    return soma
+    return rpf, status_convergence
 
 def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame) -> tuple:
     bus = bus.split(".")[0]

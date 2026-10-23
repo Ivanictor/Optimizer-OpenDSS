@@ -8,7 +8,7 @@ from pymoo.termination import get_termination
 from opendss_solver import initialize_opendss, solve_circuit
 
 dss, dss_tools, trafo_df, loads_df, buses_df, lines_df = initialize_opendss()
-buses = loads_df["bus1"].unique().tolist()
+buses = buses_df["name"].unique().tolist()
 
 
 class MyMixedProblem(Problem):
@@ -32,10 +32,17 @@ class MyMixedProblem(Problem):
             bus_idx = [int(x[f"bus_{i}"]) for i in range(self.k)]
 
             selected_buses = [self.buses[i] for i in bus_idx]
-            resultado = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
+            resultado, converged = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
 
             if resultado == 0 or np.isnan(resultado) or np.isinf(resultado):
                 fitness.append(1e6)
+            
+            elif resultado > -5000:
+                fitness.append(1e6)
+
+            elif not converged:
+                fitness.append(1e6)
+            
             else:
                 fitness.append(abs(resultado))
 
@@ -73,5 +80,5 @@ bus_idx = [int(best[f"bus_{i}"]) for i in range(5)]
 selected_buses = [buses[i] for i in bus_idx]
 
 print("Barras selecionadas:", selected_buses)
-print("Potências alocadas:", powers)
+print("Potências alocadas:", [round(float(p), 2) for p in powers])
 print("Fitness:", res_mixed.F)
