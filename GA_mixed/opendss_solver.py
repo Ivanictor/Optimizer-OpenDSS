@@ -8,6 +8,8 @@ solution_counter = 0
 def initialize_opendss():
     """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
 
+    print("Inicializando o OpenDSS...\n")
+    
     dss = py_dss_interface.DSS()
 
     BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +40,8 @@ def initialize_opendss():
     buses_df = buses_df[["name", "distance", "all_pce_active_bus", "all_pde_active_bus"]]
 
     loads_df = loads_df[["name", "bus1"]]
+
+    print("Inicialização concluída!\n")
 
     return dss, dss_tools, trafo_df, loads_df, buses_df, lines_df
 
@@ -83,8 +87,8 @@ def solve_circuit(
         
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
-    dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
-    #dss.text("Redirect 'PVSystem_120_Irrad.dss")
+    #dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
+    dss.text("Redirect 'PVSystem_120_Irrad.dss")
     
     dss.text(f"buscoords BusCoords.csv")
 
