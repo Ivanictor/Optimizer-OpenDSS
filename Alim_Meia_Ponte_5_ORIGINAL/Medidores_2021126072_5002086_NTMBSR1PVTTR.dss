@@ -1,0 +1,5 @@
+! Criação da seção de energymeters de barramento
+New "Energymeter.BusA4-_2021126072_SEGMMT_53951427" element="Line.SMT_53951427" terminal=1
+!New "Energymeter.BusA4-_2021126072_SEGMMT_88888868971" element="Line.SMT_88888868971" terminal=1
+!New "Energymeter.BusA4-_2021126072_SEGMMT_88888869403" element="Line.SMT_88888869403" terminal=1
+!New "Monitor.voltages" element="Line.SMT_53951427" terminal =1 ppolar=no mode=0

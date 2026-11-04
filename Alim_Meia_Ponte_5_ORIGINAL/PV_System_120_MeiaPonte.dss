@@ -1,0 +1,15 @@
+
+New XYcurve.TemperaturexFactor npts=4 xarray=[0 25 75 100] yarray=[1.2 1 0.8 0.6]  //Temperatura x Fator multiplicativo da potência
+New XYcurve.PowerInputxEfficiency npts=4 xarray=[0.1 0.2 0.4 1] yarray=[0.86 0.9 0.93 0.97] //Potência em pu
+
+New loadshape.Irrad1 npts=24 interval=1
+~ mult=[0.0 0.0 0.0 0.0 0.0 0.029172792843164663 0.16117416829745598 0.3630753033268102 0.5361006206318144 0.6546215040536763 0.7165885826111267 0.724251053955829 0.6796091081912218 0.58246352809617 0.4421567458764327 0.28023713167458764 0.10225429130556332 0.0008465194296896841 0.0 0.0 0.0 0.0 0.0 ]
+
+New Tshape.Temperature npts=24 interval=1
+~ temp=[25 25 25 25 25 25 25 25 35 40 45 50 60 60 55 40 35 30 25 25 25 25 25 25]
+
+
+
+New PVSystem.PV_120 phases=3 kv=0.38 bus1=10018508543.1.2.3 pmpp=11.514208525636692 temperature=25 pf=1
+~ %cutin=0.1 %cutout=0.1 effcurve=PowerInputxEfficiency P-tCurve=TemperaturexFactor Daily=Irrad1 Tdaily=Temperature
+

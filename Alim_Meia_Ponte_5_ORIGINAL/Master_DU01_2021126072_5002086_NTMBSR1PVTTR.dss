@@ -1,0 +1,29 @@
+! Criação da seção do arquivo master
+Clear
+Redirect 'CircuitoMT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CodCondutor_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CurvacargaMT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CurvacargaBT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'ChavesMT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'SegmentosMT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'ReguladorMT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'TransformadorMTMTMTBT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'ChavesBT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'SegmentosBT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'RamaisBT_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'Medidores_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CargasMT_DU01_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CargasBT_DU01_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CargasMTNT_DU01_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'CargasBTNT_DU01_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'Tensoesbase_2021126072_5002086_NTMBSR1PVTTR.dss'
+Redirect 'Monitor_Voltage_PyDSS.dss'
+Redirect 'MONITORES_2021126072_5002086.dss'
+!buscoords 'buscoords.csv'
+
+!Set mode = daily
+Set tolerance = 0.0001
+Set maxcontroliter = 10
+!Set algorithm = newton
+!Solve mode = direct
+!Solve

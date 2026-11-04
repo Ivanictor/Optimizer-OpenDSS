@@ -1,4 +1,5 @@
 import numpy as np
+import pickle
 from pymoo.core.problem import Problem
 from pymoo.core.variable import Real, Integer
 from pymoo.core.repair import Repair
@@ -15,6 +16,17 @@ class MyMixedProblem(Problem):
     def __init__(self, buses, k=5, max_power=500.0):
         self.buses = buses
         self.k = k
+
+        #Variáveis para análise do desempenho do algoritmo
+        self.contador = 0
+        self.soma_fitness_converg = 0
+        self.soma_fitness = 0
+        self.medias = []
+        self.medias_converg = []
+        self.melhor_fitness = 1e6
+        self.melhor_fitness_pop = []
+        self.contador_convergencia = 0
+        self.contador_convergencia_pop = []
 
         vars = {}
         for i in range(k):
@@ -35,16 +47,48 @@ class MyMixedProblem(Problem):
             resultado, converged = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
 
             if resultado == 0 or np.isnan(resultado) or np.isinf(resultado):
+                valor_fitness = 1e6
                 fitness.append(1e6)
             
             elif resultado > -5000:
+                valor_fitness = 1e6
                 fitness.append(1e6)
 
             elif not converged:
+                valor_fitness = 1e6
                 fitness.append(1e6)
             
             else:
                 fitness.append(abs(resultado))
+                valor_fitness = abs(resultado)
+
+            if valor_fitness < self.melhor_fitness:
+                self.melhor_fitness = valor_fitness
+
+            #Registro de melhor resultado geral a cada geração, média por população (com e sem penalidade) e contagem de soluções convergentes por população
+            self.soma_fitness += valor_fitness
+            self.contador += 1
+
+            if converged and valor_fitness != 1e6:
+                self.contador_convergencia += 1
+                self.soma_fitness_converg += valor_fitness
+
+            if self.contador % 100 == 0:
+                self.medias.append(self.soma_fitness / 100)
+                self.melhor_fitness_pop.append(self.melhor_fitness)
+
+                if self.contador_convergencia > 0:
+                    self.medias_converg.append(self.soma_fitness_converg / self.contador_convergencia)
+
+                else:
+                    self.medias_converg.append(1e6)
+
+                self.contador_convergencia_pop.append(self.contador_convergencia)
+
+                self.soma_fitness = 0
+                self.soma_fitness_converg = 0
+                self.contador_convergencia = 0
+                self.contador = 0
 
         out["F"] = np.array(fitness)
 
@@ -79,6 +123,32 @@ powers = [best[f"power_{i}"] for i in range(5)]
 bus_idx = [int(best[f"bus_{i}"]) for i in range(5)]
 selected_buses = [buses[i] for i in bus_idx]
 
+medias_pop = problem_mixed.medias
+melhor_fitness_pop = problem_mixed.melhor_fitness_pop
+medias_pop_converg = problem_mixed.medias_converg
+contador_converg = problem_mixed.contador_convergencia_pop
+
+with open("medias.pkl", "wb") as arquivo:
+    pickle.dump(medias_pop, arquivo)
+
+with open("medias_converg.pkl", "wb") as arquivo:
+    pickle.dump(medias_pop_converg, arquivo)
+
+with open("fitness.pkl", "wb") as arquivo:
+    pickle.dump(melhor_fitness_pop, arquivo)
+
+with open("contador_converg.pkl", "wb") as arquivo:
+    pickle.dump(contador_converg, arquivo)
+
 print("Barras selecionadas:", selected_buses)
 print("Potências alocadas:", [round(float(p), 2) for p in powers])
 print("Fitness:", res_mixed.F)
+
+with open("Resultados GA Alim Reduzido.txt", "w", encoding="utf-8") as f:
+    f.write(f"Barras selecionadas:  {selected_buses}\n")
+    f.write(f"Potências alocadas: {[round(float(p), 2) for p in powers]}\n")
+    f.write(f"Fitness: {res_mixed.F}\n")
+    f.write(f"Médias por geração: {str(medias_pop)}\n")
+    f.write(f"Médias por geração sem penalidades: {str(medias_pop_converg)}\n")
+    f.write(f"Melhor resultado geral a cada geração: {str(melhor_fitness_pop)}\n")
+    f.write(f"Quantidade de indivíduos que convergiram a cada geração: {str(contador_converg)}")

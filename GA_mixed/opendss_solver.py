@@ -15,6 +15,8 @@ def initialize_opendss():
     BASE_DIR = Path(__file__).resolve().parent.parent
     
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
+    #dss_file = BASE_DIR / "Alim_Meia_Ponte_5_ORIGINAL" / "Master_DU01_2021126072_5002086_NTMBSR1PVTTR.dss"
+
 
     dss_tools.update_dss(dss)
 
@@ -26,9 +28,16 @@ def initialize_opendss():
     dss.text("set stepsize=1h")
     dss.text("set number=24")
 
+    print("Carregando os transformadores...")
     trafo_df = dss_tools.model.transformers_df
+
+    print("Carregando as cargas...")
     loads_df = dss_tools.model.loads_df
+
+    print("Carregando os barramentos...")
     buses_df = dss_tools.model.buses_df
+
+    print("Carregando as linhas...")
     lines_df = dss_tools.model.lines_df
 
     loads_df["kw"] = pd.to_numeric(loads_df["kw"], errors="coerce")
