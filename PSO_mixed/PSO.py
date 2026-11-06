@@ -172,5 +172,5 @@ with open("contador_converg_pso.pkl", "wb") as arquivo:
 
 x_otimo = problem.decodificar(res.X)[0]
 print("Barras selecionadas:", [buses[i - 1] for i in x_otimo[INT_IDX].astype(int).tolist()])
-print("Potências    :", x_otimo[REAL_IDX])
+print("Potências    :", x_otimo[REAL_IDX].tolist())
 print("Fitness  :", res.F[0])
