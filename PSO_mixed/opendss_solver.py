@@ -1,0 +1,177 @@
+import py_dss_interface
+from py_dss_toolkit import dss_tools
+import pandas as pd
+from pathlib import Path
+
+solution_counter = 0
+
+def initialize_opendss():
+    """Inicializa o OpenDSS e gera os dataframes com transformadores, cargas e barras"""
+
+    print("Inicializando o OpenDSS...\n")
+    
+    dss = py_dss_interface.DSS()
+
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    
+    dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
+    #dss_file = BASE_DIR / "Alim_Meia_Ponte_5_ORIGINAL" / "Master_DU01_2021126072_5002086_NTMBSR1PVTTR.dss"
+
+
+    dss_tools.update_dss(dss)
+
+    dss.text(f"compile [{dss_file}]")
+
+    dss.text(f"buscoords BusCoords.csv")
+
+    dss.text("set mode=daily")
+    dss.text("set stepsize=1h")
+    dss.text("set number=24")
+
+    print("Carregando os transformadores...")
+    trafo_df = dss_tools.model.transformers_df
+
+    print("Carregando as cargas...")
+    loads_df = dss_tools.model.loads_df
+
+    print("Carregando os barramentos...")
+    buses_df = dss_tools.model.buses_df
+
+    print("Carregando as linhas...")
+    lines_df = dss_tools.model.lines_df
+
+    loads_df["kw"] = pd.to_numeric(loads_df["kw"], errors="coerce")
+    loads_df = loads_df.sort_values(by='kw', ascending=False)
+
+    trafo_df["bus_name"] = trafo_df["bus"].str.split(".").str[0]
+    lines_df["bus_name"] = lines_df["bus1"].str.split(".").str[0]
+
+    buses_df = buses_df[["name", "distance", "all_pce_active_bus", "all_pde_active_bus"]]
+
+    loads_df = loads_df[["name", "bus1"]]
+
+    print("Inicialização concluída!\n")
+
+    return dss, dss_tools, trafo_df, loads_df, buses_df, lines_df
+
+def calc_separated_rpf(dss: py_dss_interface.DSS, w1: int = 2, w2: int = 1) -> tuple[float]:
+    soma_trafos = 0
+    soma_feeder = 0
+    for name in dss.monitors.names:
+        if "voltage" in name:
+            continue
+
+        if "battery" in name:
+            continue
+
+        dss.monitors.name = name
+        monitor = dss.monitors.channel(1)
+
+        if "feeder" in name:  
+            soma_feeder += sum(x for x in monitor if x < 0)
+            continue
+
+        soma_trafos += sum(x for x in monitor if x < 0)
+
+    rpf = w1*soma_trafos + w2*soma_feeder
+    total = soma_trafos + soma_feeder
+
+    return rpf, total
+
+def solve_circuit(
+        dss: py_dss_interface.DSS, 
+        buses: list,
+        powers: list, 
+        trafo_df: pd.DataFrame, 
+        buses_df: pd.DataFrame, 
+        lines_df: pd.DataFrame
+        ) -> float:
+
+    global solution_counter
+    solution_counter += 1
+
+    status_convergence = True
+
+    BASE_DIR = Path(__file__).resolve().parent.parent
+        
+    dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
+    dss.text(f"compile [{dss_file}]")
+    #dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
+    dss.text("Redirect 'PVSystem_120_Irrad.dss")
+    
+    dss.text(f"buscoords BusCoords.csv")
+
+    dss.text("set mode=daily")
+    dss.text("set stepsize=1h")
+    dss.text("set number=24")
+    dss.text("set maxcontroliter=200")
+    dss.text("set AllowForms=no")
+
+    for i, bus in enumerate(buses):
+        
+        element_type, element_name, kv = decide_element(bus, buses_df, trafo_df, lines_df)
+        pot = powers[i]
+
+        dss.text(f"New Storage.Battery_{i} phases=3 bus1={bus} kv={kv} kWrated={pot} kWhrated={pot*8} dispmode=follow %stored=50")
+
+        dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
+        f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
+    
+    dss.solution.solve()
+
+    if dss.solution.converged == 0:
+        status_convergence = False
+
+    if dss.solution.control_actions_done == 0:
+        status_convergence = False
+
+    rpf, total = calc_separated_rpf(dss)
+
+    print(f"\n[Solução #{solution_counter}] Fluxo reverso total: {total:.2f}, Fitness: {rpf:.2f}")
+    print(f"Barras da solução: {buses}")
+    print(f"Potências da solução: {[round(float(p), 2) for p in powers]}")
+    print(f"Convergiu: {"Sim" if status_convergence else "Não"}")
+
+    return rpf, status_convergence
+
+def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame) -> tuple:
+    bus = bus.split(".")[0]
+    elements_query = buses_df.query(f"name == '{bus}'")["all_pde_active_bus"].iloc[0]
+
+    distance = 1e6
+    for element in elements_query:
+        element_type, element_name = element.split(".")
+
+        if element_type == "Line":
+            segment_df = lines_df.query(f"name == '{element_name}'")
+
+            element_bus = segment_df["bus_name"].iloc[0]
+            distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+
+            if "mt" in element_name:
+                kv = 13.8
+
+            elif "bt" in element_name:
+                kv = 0.38
+
+            else:
+                continue
+
+        elif element_type == "Transformer":
+            element_bus = trafo_df.query(f"name == '{element_name}'")["bus_name"].iloc[0]
+            distance_bus = buses_df.query(f"name == '{element_bus}'")["distance"].iloc[0]
+            kv = trafo_df.query(f"name == '{element_name}'")["kv"].iloc[0]
+
+        else:
+            continue
+
+        if distance_bus < distance:
+            distance = distance_bus
+            selected_element = element_name
+            selected_element_type = element_type
+            selected_kv = kv
+
+    return selected_element_type, selected_element, selected_kv
+
+
+
