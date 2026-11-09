@@ -4,7 +4,7 @@ O algoritmo SBX é utilizado pelo pymoo de forma padrão (se não for alterado) 
 
 Para variáveis reais, o procedimento é realizado da seguinte forma:
 
-1) Utiliza-se um número aleatório (distribuição uniforme) u, entre 0 e 1, e o índice de distribuição $$ \eta_c $$, que é definido como 15 na biblioteca, o algoritmo calcula um fator de distribuição $$ \beta_q $$ 
+1) Utiliza-se um número aleatório (distribuição uniforme) u, entre 0 e 1, e o índice de distribuição eta_c, que é definido como 15 na biblioteca, o algoritmo calcula um fator de distribuição igual a:
 
 $$
 \beta_q =
@@ -15,6 +15,7 @@ $$
 $$
 
 2) Considerando-se as soluções "pais" como sendo os indivíduos P1 = [100, 200, 300] e P2 = [200, 400, 100], realiza-se o cálculo abaixo para obter as duas novas soluções ("filhas").
+
 $$
 \[
 C_1=\frac{1}{2}[(1+\beta_q)P_1+(1-\beta_q)P_2]
