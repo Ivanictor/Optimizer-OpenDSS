@@ -92,13 +92,17 @@ class ProblemaMisto(Problem):
 
             powers = x[REAL_IDX].tolist()                 # 5 reais (0..500)
 
-            result, converged = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
+            result, converged, energy = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
 
             if result == 0 or np.isnan(result) or np.isinf(result):
                 valor_fitness = 1e6
                 fitness.append(1e6)
             
-            elif result > -5000:
+            elif result > -10000:
+                valor_fitness = 1e6
+                fitness.append(1e6)
+
+            elif energy < 1000 or energy > 100000:
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
@@ -148,7 +152,7 @@ algorithm = PSO(pop_size=POP_SIZE, w=0.9, c1=2.0, c2=2.0, adaptive=True)
 res = minimize(
     problem,
     algorithm,
-    ("n_gen", 100),
+    ("n_gen", 200),
     seed=1,
     verbose=True,
 )
@@ -174,3 +178,12 @@ x_otimo = problem.decodificar(res.X)[0]
 print("Barras selecionadas:", [buses[i - 1] for i in x_otimo[INT_IDX].astype(int).tolist()])
 print("Potências    :", x_otimo[REAL_IDX].tolist())
 print("Fitness  :", res.F[0])
+
+with open("Resultados PSO Alim Reduzido.txt", "w", encoding="utf-8") as f:
+    f.write(f"Barras selecionadas:  {[buses[i - 1] for i in x_otimo[INT_IDX].astype(int).tolist()]}\n")
+    f.write(f"Potências alocadas: {x_otimo[REAL_IDX].tolist()}\n")
+    f.write(f"Fitness: {res.F}\n")
+    f.write(f"Médias por geração: {str(medias_pop)}\n")
+    f.write(f"Médias por geração sem penalidades: {str(medias_pop_converg)}\n")
+    f.write(f"Melhor resultado geral a cada geração: {str(melhor_fitness_pop)}\n")
+    f.write(f"Quantidade de indivíduos que convergiram a cada geração: {str(contador_converg)}")

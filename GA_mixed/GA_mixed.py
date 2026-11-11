@@ -44,13 +44,17 @@ class MyMixedProblem(Problem):
             bus_idx = [int(x[f"bus_{i}"]) for i in range(self.k)]
 
             selected_buses = [self.buses[i] for i in bus_idx]
-            resultado, converged = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
+            resultado, converged, energy = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
 
             if resultado == 0 or np.isnan(resultado) or np.isinf(resultado):
                 valor_fitness = 1e6
                 fitness.append(1e6)
             
-            elif resultado > -5000:
+            elif resultado > -6000:
+                valor_fitness = 1e6
+                fitness.append(1e6)
+
+            elif energy < 1000 or energy > 100000:
                 valor_fitness = 1e6
                 fitness.append(1e6)
 

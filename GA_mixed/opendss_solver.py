@@ -127,12 +127,14 @@ def solve_circuit(
 
     rpf, total = calc_separated_rpf(dss)
 
-    print(f"\n[Solução #{solution_counter}] Fluxo reverso total: {total:.2f}, Fitness: {rpf:.2f}")
+    total_energy = dss.meters.register_values[0]
+
+    print(f"\n[Solução #{solution_counter}] Fluxo reverso total: {total:.2f}, Fitness: {abs(rpf):.2f}, Energia: {total_energy:.2f}")
     print(f"Barras da solução: {buses}")
     print(f"Potências da solução: {[round(float(p), 2) for p in powers]}")
     print(f"Convergiu: {"Sim" if status_convergence else "Não"}")
 
-    return rpf, status_convergence
+    return rpf, status_convergence, total_energy
 
 def decide_element(bus: str, buses_df: pd.DataFrame, trafo_df: pd.DataFrame, lines_df: pd.DataFrame) -> tuple:
     bus = bus.split(".")[0]
