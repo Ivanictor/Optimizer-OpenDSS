@@ -2,6 +2,7 @@ import py_dss_interface
 from py_dss_toolkit import dss_tools
 import pandas as pd
 from pathlib import Path
+import os
 
 solution_counter = 0
 
@@ -52,6 +53,14 @@ def initialize_opendss():
 
     print("Inicialização concluída!\n")
 
+    print("Diretório atual:", os.getcwd())
+    print("Master:", Path(dss_file).resolve())
+
+    pv_file = Path(dss_file).resolve().parent / "PVSystem_120_Irrad.dss"
+
+    print("Arquivo PV:", pv_file)
+    print("Existe:", pv_file.exists())
+
     return dss, dss_tools, trafo_df, loads_df, buses_df, lines_df
 
 def calc_separated_rpf(dss: py_dss_interface.DSS, w1: int = 2, w2: int = 1) -> tuple[float]:
@@ -97,15 +106,7 @@ def solve_circuit(
     dss_file = BASE_DIR / "Alim_Meia_Ponte_5_REDUZIDO" / "Master_PyDSS_Interface.dss"
     dss.text(f"compile [{dss_file}]")
     #dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
-    dss.text("Redirect 'PVSystem_120_Irrad.dss")
-    
-    dss.text(f"buscoords BusCoords.csv")
-
-    dss.text("set mode=daily")
-    dss.text("set stepsize=1h")
-    dss.text("set number=48")
-    dss.text("set maxcontroliter=200")
-    dss.text("set AllowForms=no")
+    dss.text("Redirect 'PVSystem_120_Irrad.dss")  
 
     for i, bus in enumerate(buses):
         
@@ -116,6 +117,14 @@ def solve_circuit(
 
         dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
+    
+    dss.text(f"buscoords BusCoords.csv")
+    
+    dss.text("set mode=daily")
+    dss.text("set stepsize=1h")
+    dss.text("set number=48")
+    dss.text("set maxcontroliter=200")
+    dss.text("set AllowForms=no")
     
     dss.solution.solve()
 

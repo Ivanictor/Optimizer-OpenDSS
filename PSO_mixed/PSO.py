@@ -1,5 +1,6 @@
 import numpy as np
 import pickle
+from pathlib import Path
 from pymoo.core.problem import Problem
 from pymoo.algorithms.soo.nonconvex.pso import PSO
 from pymoo.optimize import minimize
@@ -13,7 +14,7 @@ N_INT = 5
 N_REAL = 5
 INT_MIN, INT_MAX = 1, len(buses)
 REAL_MIN, REAL_MAX = 0.0, 500.0
-POP_SIZE = 100
+POP_SIZE = 53
 
 # Ordem do vetor X: [5 inteiras | 5 reais]
 INT_IDX = list(range(0, N_INT))
@@ -98,11 +99,11 @@ class ProblemaMisto(Problem):
                 valor_fitness = 1e6
                 fitness.append(1e6)
             
-            elif result > -10000:
+            elif result > -68000:  #25000 p/ 1 dia, 65000 para 2 dias
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
-            elif energy < 1000 or energy > 100000:
+            elif energy < 10000 or energy > 100000:
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
@@ -147,12 +148,12 @@ class ProblemaMisto(Problem):
 
 problem = ProblemaMisto(buses, pop_size=POP_SIZE)
 
-algorithm = PSO(pop_size=POP_SIZE, w=0.9, c1=2.0, c2=2.0, adaptive=True)
+algorithm = PSO(pop_size=POP_SIZE, w=-0.3488, c1=-0.2746, c2=4.8976, adaptive=False)
 
 res = minimize(
     problem,
     algorithm,
-    ("n_gen", 200),
+    ("n_gen", 377),
     seed=1,
     verbose=True,
 )
@@ -162,16 +163,20 @@ melhor_fitness_pop = problem.melhor_fitness_pop
 medias_pop_converg = problem.medias_converg
 contador_converg = problem.contador_convergencia_pop
 
-with open("medias_pso.pkl", "wb") as arquivo:
+BASE_DIR = Path(__file__).resolve().parent.parent
+PATH_CONVERGENCE = BASE_DIR / "PSO_mixed" / "Convergence" / "ith_attempt"
+PATH_CONVERGENCE.mkdir(parents=True, exist_ok=True)
+
+with open(PATH_CONVERGENCE / "medias_pso.pkl", "wb") as arquivo:
     pickle.dump(medias_pop, arquivo)
 
-with open("medias_converg_pso.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "medias_converg_pso.pkl", "wb") as arquivo:
     pickle.dump(medias_pop_converg, arquivo)
 
-with open("fitness_pso.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "fitness_pso.pkl", "wb") as arquivo:
     pickle.dump(melhor_fitness_pop, arquivo)
 
-with open("contador_converg_pso.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "contador_converg_pso.pkl", "wb") as arquivo:
     pickle.dump(contador_converg, arquivo)
 
 x_otimo = problem.decodificar(res.X)[0]
@@ -179,7 +184,7 @@ print("Barras selecionadas:", [buses[i - 1] for i in x_otimo[INT_IDX].astype(int
 print("Potências    :", x_otimo[REAL_IDX].tolist())
 print("Fitness  :", res.F[0])
 
-with open("Resultados PSO Alim Reduzido.txt", "w", encoding="utf-8") as f:
+with open(PATH_CONVERGENCE / "Resultados PSO Alim Reduzido.txt", "w", encoding="utf-8") as f:
     f.write(f"Barras selecionadas:  {[buses[i - 1] for i in x_otimo[INT_IDX].astype(int).tolist()]}\n")
     f.write(f"Potências alocadas: {x_otimo[REAL_IDX].tolist()}\n")
     f.write(f"Fitness: {res.F}\n")

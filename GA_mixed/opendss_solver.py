@@ -26,7 +26,7 @@ def initialize_opendss():
 
     dss.text("set mode=daily")
     dss.text("set stepsize=1h")
-    dss.text("set number=24")
+    dss.text("set number=48")
 
     print("Carregando os transformadores...")
     trafo_df = dss_tools.model.transformers_df
@@ -98,14 +98,6 @@ def solve_circuit(
     dss.text(f"compile [{dss_file}]")
     #dss.text("Redirect 'PV_System_120_MeiaPonte.dss'")
     dss.text("Redirect 'PVSystem_120_Irrad.dss")
-    
-    dss.text(f"buscoords BusCoords.csv")
-
-    dss.text("set mode=daily")
-    dss.text("set stepsize=1h")
-    dss.text("set number=24")
-    dss.text("set maxcontroliter=200")
-    dss.text("set AllowForms=no")
 
     for i, bus in enumerate(buses):
         
@@ -116,6 +108,14 @@ def solve_circuit(
 
         dss.text(f"New StorageController.SC_{i} element={element_type}.{element_name} terminal=1 modedis=peakShave elementList=[Battery_{i}]\n"
         f"~ MonPhase=AVG kwtarget=5 modecharge=peakShaveLow kwtargetLow=0\n\n")
+    
+    dss.text(f"buscoords BusCoords.csv")
+    
+    dss.text("set mode=daily")
+    dss.text("set stepsize=1h")
+    dss.text("set number=48")
+    dss.text("set maxcontroliter=200")
+    dss.text("set AllowForms=no")
     
     dss.solution.solve()
 

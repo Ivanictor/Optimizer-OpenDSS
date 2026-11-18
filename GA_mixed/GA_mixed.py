@@ -1,5 +1,6 @@
 import numpy as np
 import pickle
+from pathlib import Path
 from pymoo.core.problem import Problem
 from pymoo.core.variable import Real, Integer
 from pymoo.core.repair import Repair
@@ -50,11 +51,11 @@ class MyMixedProblem(Problem):
                 valor_fitness = 1e6
                 fitness.append(1e6)
             
-            elif resultado > -6000:
+            elif resultado > -60000:
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
-            elif energy < 1000 or energy > 100000:
+            elif energy < 10000 or energy > 100000:
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
@@ -132,16 +133,20 @@ melhor_fitness_pop = problem_mixed.melhor_fitness_pop
 medias_pop_converg = problem_mixed.medias_converg
 contador_converg = problem_mixed.contador_convergencia_pop
 
-with open("medias.pkl", "wb") as arquivo:
+BASE_DIR = Path(__file__).resolve().parent.parent
+PATH_CONVERGENCE = BASE_DIR / "GA_mixed" / "Convergence_data" / "ith_attempt"
+PATH_CONVERGENCE.mkdir(parents=True, exist_ok=True)
+
+with open(PATH_CONVERGENCE / "medias.pkl", "wb") as arquivo:
     pickle.dump(medias_pop, arquivo)
 
-with open("medias_converg.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "medias_converg.pkl", "wb") as arquivo:
     pickle.dump(medias_pop_converg, arquivo)
 
-with open("fitness.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "fitness.pkl", "wb") as arquivo:
     pickle.dump(melhor_fitness_pop, arquivo)
 
-with open("contador_converg.pkl", "wb") as arquivo:
+with open(PATH_CONVERGENCE / "contador_converg.pkl", "wb") as arquivo:
     pickle.dump(contador_converg, arquivo)
 
 print("Barras selecionadas:", selected_buses)
