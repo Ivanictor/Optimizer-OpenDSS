@@ -14,7 +14,7 @@ buses = buses_df["name"].unique().tolist()
 
 
 class MyMixedProblem(Problem):
-    def __init__(self, buses, k=5, max_power=500.0):
+    def __init__(self, buses, k=5, max_power=700.0):
         self.buses = buses
         self.k = k
 
@@ -117,7 +117,7 @@ class UniqueBusRepair(Repair):
         return X
 
 
-problem_mixed = MyMixedProblem(buses=buses, k=5, max_power=500.0)
+problem_mixed = MyMixedProblem(buses=buses, k=5, max_power=700.0)
 
 algorithm_mixed = MixedVariableGA(pop_size=100, repair=UniqueBusRepair())
 
