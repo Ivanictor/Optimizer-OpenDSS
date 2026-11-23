@@ -13,7 +13,7 @@ buses = buses_df["name"].unique().tolist()
 N_INT = 5
 N_REAL = 5
 INT_MIN, INT_MAX = 1, len(buses)
-REAL_MIN, REAL_MAX = 0.0, 500.0
+REAL_MIN, REAL_MAX = 0.0, 900.0
 POP_SIZE = 53
 
 # Ordem do vetor X: [5 inteiras | 5 reais]
@@ -91,7 +91,7 @@ class ProblemaMisto(Problem):
             inteiras = x[INT_IDX].astype(int).tolist()   # 5 inteiras (1..1217)
             selected_buses = [self.buses[i - 1] for i in inteiras]
 
-            powers = x[REAL_IDX].tolist()                 # 5 reais (0..500)
+            powers = x[REAL_IDX].tolist()                 # 5 reais (0..max)
 
             result, converged, energy = solve_circuit(dss, selected_buses, powers, trafo_df, buses_df, lines_df)
 
@@ -99,7 +99,7 @@ class ProblemaMisto(Problem):
                 valor_fitness = 1e6
                 fitness.append(1e6)
             
-            elif result > -68000:  #25000 p/ 1 dia, 65000 para 2 dias
+            elif result > -55000:  #25000 p/ 1 dia, 60000 para 2 dias
                 valor_fitness = 1e6
                 fitness.append(1e6)
 
@@ -148,7 +148,7 @@ class ProblemaMisto(Problem):
 
 problem = ProblemaMisto(buses, pop_size=POP_SIZE)
 
-algorithm = PSO(pop_size=POP_SIZE, w=-0.3488, c1=-0.2746, c2=4.8976, adaptive=False)
+algorithm = PSO(pop_size=POP_SIZE, w=0.9, c1=2, c2=2, adaptive=False)
 
 res = minimize(
     problem,

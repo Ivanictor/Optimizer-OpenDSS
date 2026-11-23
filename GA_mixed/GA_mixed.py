@@ -117,7 +117,7 @@ class UniqueBusRepair(Repair):
         return X
 
 
-problem_mixed = MyMixedProblem(buses=buses, k=5, max_power=700.0)
+problem_mixed = MyMixedProblem(buses=buses, k=5, max_power=900.0)
 
 algorithm_mixed = MixedVariableGA(pop_size=100, repair=UniqueBusRepair())
 
